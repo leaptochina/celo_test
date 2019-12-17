@@ -1,7 +1,11 @@
 package com.pine.celo.main_activity
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
+import android.widget.CompoundButton
+import android.widget.TextView
 import com.blueberrysolution.pinelib19.activity.PineActivity
 import com.blueberrysolution.pinelib19.addone.broadcast.Broadcast
 import com.blueberrysolution.pinelib19.addone.broadcast.OnBroadcast
@@ -19,7 +23,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import kotlin.random.Random
 
-class MainActivity : PineActivity(), OnBroadcast {
+class MainActivity : PineActivity(), OnBroadcast, CompoundButton.OnCheckedChangeListener,
+    TextWatcher {
 
 
     lateinit var adapter: UsersAdapter;
@@ -35,9 +40,22 @@ class MainActivity : PineActivity(), OnBroadcast {
 
         Broadcast.i.reg("OnUsersRefreshed", this)
 
+
+        male.setOnCheckedChangeListener (this)
+        female.setOnCheckedChangeListener(this)
+        search.addTextChangedListener(this)
+    }
+
+    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+        UsersDataController.i().isFemale = female.isChecked;
+        UsersDataController.i().isMale = male.isChecked;
+
+        UsersDataController.i().filter();
+
     }
 
     private fun onLoadmore() {
+        loading.visibility = View.VISIBLE
         UsersDataController.i().loadMore();
     }
 
@@ -45,12 +63,27 @@ class MainActivity : PineActivity(), OnBroadcast {
         if (key == "OnUsersRefreshed"){
             adapter.notifyDataSetChanged();
             refreshLoadmoreListener.stopRefresh();
+            loading.visibility = View.INVISIBLE
         }
     }
 
     private fun onRefresh() {
-
+        loading.visibility = View.VISIBLE
         UsersDataController.i().refreshData();
+    }
+
+    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+    }
+
+    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+    }
+
+    override fun afterTextChanged(s: Editable?) {
+        UsersDataController.i().textSearch = search.text.toString();
+
+        UsersDataController.i().filter();
     }
 
 

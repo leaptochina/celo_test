@@ -12,16 +12,39 @@ import retrofit2.Response
 
 class UsersDataController{
 
-    var users: ArrayList<DbUserBean> = ArrayList();
+    var isMale: Boolean = true;
+    var isFemale: Boolean = true;
+    var textSearch: String = "";
 
+    var users: ArrayList<DbUserBean> = ArrayList();
+    var filterUsers: ArrayList<DbUserBean> = ArrayList();
 
     constructor(){
         if (users.size == 0){
             users = M(DbUserBean::class).select();
+            filter( );
         }
         if (users.size == 0){
             refreshData();
         }
+    }
+
+    fun filter( ){
+        filterUsers.clear();
+        users.forEach {
+            if (textSearch != ""){
+                if ((!it.phone.contains(textSearch)) && (!it.email.contains(textSearch)) && (!it.name.contains(textSearch)) && (!it.title.contains(textSearch)) && (!it.dob.contains(textSearch))){
+                    return@forEach
+                }
+            }
+            if ((it.gender == "M") && (isMale)){
+                filterUsers.add(it);
+            }
+            else if ((it.gender == "F") && (isFemale)){
+                filterUsers.add(it);
+            }
+        }
+        Broadcast.i.send("OnUsersRefreshed");
     }
 
     fun loadMore(){
@@ -35,7 +58,7 @@ class UsersDataController{
 
                 setupBody(response.body()!!)
 
-                Broadcast.i.send("OnUsersRefreshed");
+                filter( );
 
             }
 
@@ -65,7 +88,7 @@ class UsersDataController{
 
                 setupBody(response.body()!!)
 
-                Broadcast.i.send("OnUsersRefreshed");
+                filter( )
 
             }
 

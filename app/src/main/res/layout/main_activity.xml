@@ -18,30 +18,55 @@
 
 
 
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_marginLeft="50px"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/return_btn"
-            android:layout_toRightOf="@+id/return_btn"
             android:background="#FFF"
             >
 
 
-            <TextView
-                android:id="@+id/stop_words"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="0dp"
+                android:layout_weight="45"
                 android:layout_height="wrap_content"
-                android:text="User List"
-                android:textColor="#000"
-                android:textSize="20sp" />
+                android:hint="Search"
+                android:text="" />
+
+            <CheckBox
+                android:id="@+id/male"
+                android:layout_width="0dp"
+                android:layout_weight="20"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/textView"
+                android:checked="true"
+                android:text="Male" />
+
+            <CheckBox
+                android:id="@+id/female"
+                android:layout_width="0dp"
+                android:layout_weight="25"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/male"
+                android:checked="true"
+                android:text="Female" />
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:visibility="invisible"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:layout_height="wrap_content"
+            />
 
 
-
-
-
-        </RelativeLayout>
+        </LinearLayout>
 
 
     </RelativeLayout>

@@ -25,7 +25,7 @@ class UsersAdapter(): RecyclerView.Adapter<MainActivityViewHolder>(){
 
 
     override fun onBindViewHolder(holder: MainActivityViewHolder, position: Int) {
-        var user = UsersDataController.i().users[position];
+        var user = UsersDataController.i().filterUsers[position];
 
         holder.dob!!.text = user.dob;
         holder.user_name!!.text = user.title + " " + user.name;
@@ -45,7 +45,7 @@ class UsersAdapter(): RecyclerView.Adapter<MainActivityViewHolder>(){
 
 
     override fun getItemCount(): Int {
-        return UsersDataController.i().users.size;
+        return UsersDataController.i().filterUsers.size;
     }
 
 }
