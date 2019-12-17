@@ -1,0 +1,12 @@
+<resources>
+    <string name="retry_text">重试</string>
+    <string name="exit_text">退出</string>
+    <string name="cancel_text">取消</string>
+
+
+    <string name="topic_replay_hint">请发表您对这道题的见解</string>
+    <string name="topic_replay_cancel_btn">取消</string>
+    <string name="topic_replay_send_btn">发送</string>
+
+
+</resources>

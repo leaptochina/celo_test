@@ -1,0 +1,22 @@
+<resources>
+    <string name="float_windows_allow">需要这个权限显示悬浮窗，请允许</string>
+    <string name="float_windows_debug_title">蓝莓调试器</string>
+
+
+    <string name="float_windows_functions">功能</string>
+    <string name="float_windows_errors">错误</string>
+    <string name="float_windows_logs">日志</string>
+
+    <string name="float_windows_language">切换语言</string>
+    <string name="float_windows_language_choose">请选择您需要的语言</string>
+
+    <string name="float_windows_reset">重置应用</string>
+
+    <string name="float_windows_msgbox_do_you_want">确定重置应用吗，所有数据将会被删除 </string>
+
+    <string name="float_windows_kill_app">杀掉应用进程(彻底退出)</string>
+
+    <string name="float_windows_environment_switch">切换到发布环境</string>
+    <string name="float_windows_environment_switch_only_data">仅切换数据源</string>
+    <string name="float_windows_environment_switch_total_switch">彻底切换</string>
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+
+
+
+
+    <string name="one_more_time_to_exit">再按一次退出</string>
+
+    <string name="key_retry">重试</string>
+    <string name="key_cancel">取消</string>
+    <string name="key_yes">是</string>
+    <string name="key_no">否</string>
+    <string name="key_pay">购买</string>
+
+</resources>

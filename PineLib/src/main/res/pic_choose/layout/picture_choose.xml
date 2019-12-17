@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/outter_layout"
+        android:background="#30000000">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayout1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/message_box_white_middle"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:id="@+id/take_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/btn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/message_box_white_btn"
+                    android:gravity="center"
+                    android:text="@string/photo_choose_take_photo"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+
+        </RelativeLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd" />
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/from_album"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/message_box_white_btn"
+                    android:gravity="center"
+                    android:text="@string/photo_choose_album"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+
+        </RelativeLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd" />
+
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="#ddd" />
+
+        <RelativeLayout
+                android:id="@+id/cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/btn4"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/message_box_white_btn"
+                    android:gravity="center"
+                    android:text="@string/photo_choose_cancel"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

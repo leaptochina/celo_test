@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="photo_choose_title">选择图片</string>
+    <string name="photo_choose_take_photo">拍照</string>
+    <string name="photo_choose_album">从图库选择</string>
+    <string name="photo_choose_cancel">取消</string>
+
+
+    <string name="photo_choose_cannot_get_pic">无法拉取到图片，请重试！</string>
+
+</resources>

@@ -1,0 +1,59 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.blueberrysolution.pinelib19">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+    <application
+        android:networkSecurityConfig="@xml/network_security_config">
+        <activity android:name=".debug.window.DebugWindowRequirePermission"
+                android:theme="@style/Transparent">
+        </activity>
+        <activity android:name=".pop_up_windows.activity_msgbox.ActivityMessageBox"
+                android:theme="@style/Transparent">
+        </activity>
+        <activity android:name=".view.picture_choose.src.msgbox_activity.PicSourceChooseActivity"
+                android:launchMode="singleTask"
+                android:theme="@style/Transparent">
+        </activity>
+
+        <activity android:name=".permission.src.PermissionRequireActivity"
+                android:launchMode="singleTask"
+                android:theme="@style/Transparent">
+        </activity>
+
+        <activity android:name=".view.transparent_notice.TransparentNoticeActivity"
+                android:launchMode="singleTask"
+                android:theme="@style/Transparent">
+        </activity>
+
+
+        <!-- 图片 拍照 -->
+        <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="com.blueberrysolution.pinelib19.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/res" />
+        </provider>
+
+
+    </application>
+</manifest>

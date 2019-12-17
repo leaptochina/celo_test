@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:id="@+id/debug_window_inner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="100"
+            android:background="@drawable/debug_window_background"
+            android:orientation="vertical">
+
+        <include
+                layout="@layout/debug_window_main_title"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="8"
+                />
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/debug_window_function_list"
+                    android:layout_width="match_parent"
+                    android:layout_weight="84"
+                    android:layout_height="1dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/debug_window_log_list"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_weight="84"
+                    android:layout_height="1dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/debug_window_error_list"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_weight="84"
+                    android:layout_height="1dp"/>
+
+
+
+        <include
+                layout="@layout/debug_window_main_btns"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="8"
+                />
+
+    </LinearLayout>
+
+</RelativeLayout>

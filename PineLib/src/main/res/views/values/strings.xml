@@ -1,0 +1,11 @@
+<resources>
+    <string name="retry_text">Retry</string>
+    <string name="exit_text">Exit</string>
+    <string name="cancel_text">Cancel</string>
+
+
+    <string name="topic_replay_hint">Please tell us your explaination</string>
+    <string name="topic_replay_cancel_btn">Cancel</string>
+    <string name="topic_replay_send_btn">Send</string>
+
+</resources>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="float_windows_allow">Please Allow Draw over other App to enable Float Windows</string>
+    <string name="float_windows_debug_title">Blueberry Solution Debug</string>
+
+    <string name="float_windows_functions">Func</string>
+    <string name="float_windows_errors">Errors</string>
+    <string name="float_windows_logs">Logs</string>
+
+    <string name="float_windows_language">Switch Language</string>
+    <string name="float_windows_language_choose">Please choose language?</string>
+
+    <string name="float_windows_reset">Reset App</string>
+    <string name="float_windows_msgbox_do_you_want">Do you want reset app, all data will be deleted? </string>
+
+
+    <string name="float_windows_kill_app">Kill App Process</string>
+
+    <string name="float_windows_environment_switch">Switch to Live Environment</string>
+    <string name="float_windows_environment_switch_only_data">Only Datasource</string>
+    <string name="float_windows_environment_switch_total_switch">Total Switch</string>
+</resources>

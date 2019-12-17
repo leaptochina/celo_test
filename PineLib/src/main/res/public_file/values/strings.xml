@@ -1,0 +1,13 @@
+<resources>
+
+
+
+
+    <string name="one_more_time_to_exit">Press one more time to exit</string>
+
+    <string name="key_retry">Retry</string>
+    <string name="key_cancel">Cancel</string>
+    <string name="key_yes">YES</string>
+    <string name="key_no">NO</string>
+    <string name="key_pay">PAY</string>
+</resources>

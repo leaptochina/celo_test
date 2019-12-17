@@ -1,0 +1,172 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.github.dcendents.android-maven' // 增加
+//apply plugin: 'org.greenrobot.greendao' // apply plugin
+//apply plugin: 'kotlinx-serialization'
+
+
+group='com.github.leaptochina'
+
+
+//需要在Project的gradle添加如下代码
+//buildscript {
+//    dependencies {
+//        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+//        classpath 'com.google.gms:google-services:4.3.2'
+//    }
+//}
+
+// 需要在Project的gradle 修改 两处 两处 两处 两处
+//repositories {
+//    jcenter()
+//    maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+//    google()
+//}
+
+//另外需要将Model：App 中的如下依赖删除 否则跟lib冲突 如果有
+//    implementation 'com.android.support:appcompat-v7:28.0.0'
+//需要添加依赖
+//implementation 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
+////百分比布局
+//implementation 'androidx.percentlayout:percentlayout:1.0.0-beta01'
+//// Anko Commons 异步线程
+//implementation "org.jetbrains.anko:anko-commons:0.10.1"
+////Design Tablayout
+//implementation 'com.google.android.material:material:1.0.0-beta01'
+////Gson
+//implementation 'com.google.code.gson:gson:2.8.5'
+////另一个Sqlite ORM
+//implementation 'org.jetbrains.exposed:exposed:0.13.6'
+////Recycle View
+//implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+
+//需要将Model：App 中添加
+//android {
+//    defaultConfig {
+//        multiDexEnabled true
+//    }
+//}
+
+
+android {
+    compileSdkVersion 29
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets{
+        main{
+
+
+            res.srcDirs =
+            [
+
+                    'src/main/res/debug_window',
+                    'src/main/res/message_box',
+                    'src/main/res/views',
+                    'src/main/res/pic_choose',
+                    'src/main/res/waitting_dialog',
+                    'src/main/res/permission',
+                    'src/main/res/empty',
+                    'src/main/res/public_file',
+                    'src/main/res',
+            ]
+        }
+
+
+    }
+
+}
+
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    //当一个dex文件装不下的时候自动拆分 -- 编译
+    implementation 'androidx.multidex:multidex:2.0.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.50"
+    // Anko Commons 异步线程
+    implementation 'org.jetbrains.anko:anko-commons:0.10.1'
+    apply plugin: 'kotlin-android-extensions'
+    //百分比布局
+    implementation 'androidx.percentlayout:percentlayout:1.0.0'
+    //Design Tablayout
+    implementation 'com.google.android.material:material:1.1.0-alpha10'
+    //Logger
+    implementation 'com.orhanobut:logger:2.2.0'
+    //SQlite
+ //   implementation 'org.greenrobot:greendao:3.2.2' // add library
+
+//    //Gson
+//    implementation 'com.google.code.gson:gson:2.8.5'
+    //OKHttp
+  //  implementation 'com.squareup.okhttp3:okhttp:3.3.1'
+//    //Sqlite
+//    implementation 'org.jetbrains.anko:anko-sqlite:0.10.8'
+    //另一个Sqlite ORM
+    implementation 'org.jetbrains.exposed:exposed:0.13.6'
+    implementation 'org.xerial:sqlite-jdbc:3.28.0'
+    //Recycle View
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    //官方扩展库 Viewpager
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-beta04'
+    //implementation 'com.github.lsjwzh.RecyclerViewPager:lib:v1.1.2'
+    //implementation 'com.wajahatkarim3.easyflipviewpager:easyflipviewpager:1.0.0'
+
+    //这个是LeakCanary 内存泄漏的检测装置
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6'
+    //上拉抽屉
+     implementation 'com.sothree.slidinguppanel:library:3.4.0'
+
+    //RxJava 异步转同步
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    //网络请求框架 Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+
+    // Font Awesome
+    implementation 'info.androidhive:fontawesome:0.0.5'
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+
+//    //Json Serializayion
+//    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.11.0"
+    //Waitting Windos 需要降低编译版本
+    //implementation 'com.carson_ho:Kawaii_LoadingView:1.0.0'
+}
+repositories {
+    //maven { url "https://www.jitpack.io" }
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    maven { url "https://kotlin.bintray.com/kotlinx" }
+
+}
+//repositories {
+//    mavenCentral()
+//}
