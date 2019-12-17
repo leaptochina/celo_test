@@ -13,7 +13,7 @@ import com.pine.celo.net.RetrofitServices
 
 class App : BaseApp() {
 
-    override var isDebug = true;
+    override var isDebug = false;
     override var releaseSignature = "0e07a3e5c0f2270447eb14c71665bf40";
 
     lateinit var sqlite: BbsSqlite;
