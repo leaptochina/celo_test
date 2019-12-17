@@ -8,7 +8,7 @@ open class UserBaseModel {
     var id: Int? = -1;
     var superKClass: KClass<BModel> = BModel::class;
     var result_count = 0;
-    var table_name = "";
+    open var table_name = "";
     var soft_delete = "";
     var oldValues = HashMap<String, String?>();
 
@@ -16,8 +16,10 @@ open class UserBaseModel {
     init{
 
 
-        if (table_name.equals(""))
+        if (table_name.equals("")){
             table_name = Hump.humpToLine2(this.javaClass.simpleName).substring(1);
+            superKClass = this.javaClass.kotlin as  KClass<BModel>;
+        }
 
     }
 

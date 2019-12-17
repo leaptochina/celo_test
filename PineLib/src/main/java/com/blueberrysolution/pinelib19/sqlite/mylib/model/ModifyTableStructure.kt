@@ -8,8 +8,9 @@ import kotlin.reflect.KType
 import kotlin.reflect.jvm.internal.impl.types.checker.KotlinTypeCheckerImpl
 import kotlin.reflect.jvm.javaType
 
-open class ModifyTableStructure<T: BModel> : DeleteModel<T>(){
+open class ModifyTableStructure<T: BModel> : DropTableStructure<T>(){
     private var insertColumnSql = "";
+
 
 
     fun createColumn(name: String, type: KClass<*>, default: String){
@@ -33,7 +34,7 @@ open class ModifyTableStructure<T: BModel> : DeleteModel<T>(){
         A.db!!.execSQL(insertColumnSql);
     }
 
-    private fun getModelColumns(): Map<String, KType> {
+    public fun getModelColumns(): Map<String, KType> {
 
         var r = HashMap<String, KType>();
 
@@ -49,7 +50,6 @@ open class ModifyTableStructure<T: BModel> : DeleteModel<T>(){
 
     companion object {
         var insertColumnSqlTemplate = "ALTER TABLE %TABLE_NAME% ADD COLUMN %COLUMNNAME%;"
-
 
     }
 }

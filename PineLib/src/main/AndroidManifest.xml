@@ -46,7 +46,7 @@
         <!-- 图片 拍照 -->
         <provider
                 android:name="androidx.core.content.FileProvider"
-                android:authorities="com.blueberrysolution.pinelib19.fileprovider"
+                android:authorities="com.blueberrysolution.pinelib.fileprovider"
                 android:exported="false"
                 android:grantUriPermissions="true">
             <meta-data

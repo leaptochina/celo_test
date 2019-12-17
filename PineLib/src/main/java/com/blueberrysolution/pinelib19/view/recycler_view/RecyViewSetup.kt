@@ -46,8 +46,22 @@ class RecyViewSetup : SwipeRefreshLayout.OnRefreshListener {
         recycleView.setItemAnimator(animation)
         recycleView.addItemDecoration(divider)
 
-        if (refreshLoadmoreListener != null)
+        if (refreshLoadmoreListener != null){
             refreshLoadmoreListener!!.swipe_refreshlayout?.setOnRefreshListener (this)
+
+            var loadingMoreListener = object : RecyclerView.OnScrollListener() {
+                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                    super.onScrollStateChanged(recyclerView, newState)
+                    if (!recyclerView.canScrollVertically(1)) {
+                        refreshLoadmoreListener!!.onLoadmore();
+                    }
+                }
+
+            }
+
+            recycleView.addOnScrollListener(loadingMoreListener);
+        }
+
 
 
         return this;
@@ -57,4 +71,11 @@ class RecyViewSetup : SwipeRefreshLayout.OnRefreshListener {
         refreshLoadmoreListener!!.onRefresh();
     }
 
+    private fun addOnScrollListener(recyViewSetup: RecyViewSetup) {
+
+    }
+
 }
+
+
+

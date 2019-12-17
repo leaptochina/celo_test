@@ -26,6 +26,10 @@ open class InsertModel<T: BModel>: UpdateModel<T>(){
     }
 
     override fun save(instance: T): T{
+        if (instance.superKClass == BModel::class){
+            newInstance();
+        }
+
         val oldId = ReflectHelper.getValue(kclass, instance, "oldValues") as  HashMap<String, String?>
 
         if (oldId.count() != 0) return super.save(instance);
